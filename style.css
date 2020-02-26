@@ -1,0 +1,35 @@
+.logo{
+    width: 50px;
+    height: 50px;
+}
+
+.card {
+    width: 95%;
+    height: 480px;
+    margin: 40px;
+    margin-top: 15px;
+    margin-bottom: 25px;
+    position: relative;
+    cursor: pointer;
+}
+
+.card:hover{
+    filter: brightness(1.15);
+}
+
+.image {
+    height: 480px;
+}
+
+.textOnPicture{
+    position: absolute;
+    top: 400px;
+    font-size: 16px;
+    padding: 10px;
+    color: mintcream;
+}
+
+.seeMore{
+    text-align: center;
+    margin: 0 auto;
+}

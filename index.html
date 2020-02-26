@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <title>Test1</title>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <img src="/logo.png" alt="" class="logo navbar-brand">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="#">Features</a>
+                <a class="nav-item nav-link" href="#">Pricing</a>
+                <a class="nav-item nav-link" href="#">Contacts</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="card">
+        <img src="/1.jpg" alt="" class="image" />
+        <h2 class="textOnPicture">Lorem <br />
+            ipsum dolor sit amet consectetur adipisicing elit.
+            <h2>
+    </div>
+
+    <div class="seeMore">
+        <button class="btn btn-primary btn-sm" id="more">Get more -></button>
+    </div>
+
+
+
+
+    <script>
+        let i = 2;
+        document.getElementById('more').addEventListener('click', function handler(event) {
+            if (i == 5) {
+                document.getElementById('more').removeEventListener('click', handler);
+            }
+
+            let div = document.createElement('div');
+            div.classList.add('card');
+            let img = document.createElement('img');
+            img.src = `${i}.jpg`;
+            i += 1;
+            img.classList.add('image');
+            let h2 = document.createElement('h2');
+            h2.classList.add('textOnPicture');
+            h2.textContent = 'Lorem ipsum dolor sit amet consectetur adipisicing elit.';
+            document.body.append(div);
+            div.appendChild(img);
+            div.appendChild(h2);
+            event.target.hidden = true;
+        });
+
+        window.addEventListener('scroll', function () {
+            let winBottom = document.documentElement.getBoundingClientRect().bottom;
+            let clientHeight = document.documentElement.clientHeight;
+            if (winBottom < clientHeight +10) {
+                document.getElementById('more').click();
+            }
+
+        });
+    </script>
+</body>
+
+</html>
