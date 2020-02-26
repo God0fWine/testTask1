@@ -53,23 +53,28 @@
 
             let div = document.createElement('div');
             div.classList.add('card');
+
             let img = document.createElement('img');
             img.src = `${i}.jpg`;
             i += 1;
             img.classList.add('image');
+
             let h2 = document.createElement('h2');
             h2.classList.add('textOnPicture');
             h2.textContent = 'Lorem ipsum dolor sit amet consectetur adipisicing elit.';
+
             document.body.append(div);
             div.appendChild(img);
             div.appendChild(h2);
+
             event.target.hidden = true;
         });
 
         window.addEventListener('scroll', function () {
+
             let winBottom = document.documentElement.getBoundingClientRect().bottom;
             let clientHeight = document.documentElement.clientHeight;
-            if (winBottom < clientHeight +10) {
+            if (winBottom < clientHeight + 10) {
                 document.getElementById('more').click();
             }
 
